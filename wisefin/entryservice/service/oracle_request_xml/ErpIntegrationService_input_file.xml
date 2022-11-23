@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <typ:submitESSJobRequest>
+            <typ:jobPackageName>/oracle/apps/ess/financials/generalLedger/programs/common</typ:jobPackageName>
+            <typ:jobDefinitionName>JournalImportLauncher</typ:jobDefinitionName>
+            <!--Zero or more repetitions:-->
+            <typ:paramList>300000001389024</typ:paramList>
+            <!--Data Access Set:-->
+            <typ:paramList>Vsolv</typ:paramList>
+            <!--Source:-->
+            <typ:paramList>300000001389007</typ:paramList>
+            <!--Ledger:-->
+            <typ:paramList></typ:paramList>
+            <!--Group ID:-->
+            <typ:paramList>N</typ:paramList>
+            <!--Post Account Entry to Suspense:-->
+            <typ:paramList>N</typ:paramList>
+            <!--Create Summary Journals:-->
+            <typ:paramList>N</typ:paramList>
+            <!--Import Descriptive Flexfields:-->
+        </typ:submitESSJobRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,1 @@
+from faservice.models.famodels import *

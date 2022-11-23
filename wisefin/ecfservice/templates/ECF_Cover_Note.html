@@ -1,0 +1,330 @@
+<html>
+<style>
+
+td, th {
+  border: 3px solid black;
+  text-align: center;
+  padding: 10px;
+
+
+}
+</style>
+
+
+<body>
+<img align="left" width="100px" src="{{img}}" style="width:250px;
+                height:120px ; margin-left: 1%;"/>
+<h2 style="margin-left: 32%;"> Expense Claim Form -
+    <img align="right" src="{{barcodeimage_path}}" style="width:330px; height:140px ; "/></h2>
+<!--            <img align="right" src="data:image/png;base64,{{img_str}}" style="width:280px; height:140px ; " /> </h2>-->
+
+<h2 style="margin-left: 41%;"> {{ecftype}} </h2>
+
+
+<table border="3" style="
+            width: 100%; margin-top: 7%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+    <thead>
+    <tr>
+
+        <th colspan="8" style=" background-color:#D8D8D8;  padding-bottom: 3%;
+                    text-align: center">
+            INVOICE HEADER
+        </th>
+    </tr>
+
+
+    </thead>
+    <tr>
+        <!--                style=" word-wrap: break-word "-->
+        <td style=" background-color:#D8D8D8;">Non PO No</td>
+        <td style="font-size:12px">{{crno}}</td>
+        <td style=" background-color:#D8D8D8;">Invoice Type</td>
+        <td>{{ecftype}}</td>
+        <td style=" background-color:#D8D8D8;">Expense Type</td>
+        <td>{{ecftype}}</td>
+        <td style="  background-color:#D8D8D8;">Non PO Date</td>
+        <td> {{ecfdate}}</td>
+    </tr>
+
+    <tr>
+
+        <td style="  background-color:#D8D8D8;">Employee ID</td>
+        <td>{{raisercode}}</td>
+        <td style="  background-color:#D8D8D8;">Name</td>
+        <td>{{raisername}}</td>
+        <td style=" background-color:#D8D8D8;">Designation</td>
+        <td>{{ raiser_emp_details.designation }}</td>
+        <td style=" background-color:#D8D8D8;">Department</td>
+        <td>{{raiser_emp_details.department.name}}</td>
+    </tr>
+    <tr>
+
+        <td style=" background-color:#D8D8D8;">Branch code</td>
+        <td>{{raiserbranch.code}}</td>
+        <td style=" background-color:#D8D8D8;">Branch Name</td>
+        <td>{{branch.0.name}}-{{ branch.0.code}}</td>
+        <td style=" background-color:#D8D8D8;">PO / WO No.</td>
+        <td>PO/WO NUMBER</td>
+        <td style=" background-color:#D8D8D8;">Non PO Amount</td>
+        <td>{{ecfamount}}</td>
+
+    </tr>
+
+    <tr>
+
+        <td style=" background-color:#D8D8D8;">Invoice No</td>
+        <td>{{Invheader.0.invoiceno}}</td>
+        <td style=" background-color:#D8D8D8;">Invoice Amount</td>
+        <td>{{Invheader.0.invoiceamount}}</td>
+        <td style=" background-color:#D8D8D8;">Tax Amount</td>
+        <td>{{Invheader.0.taxamount}}</td>
+        <td style=" background-color:#D8D8D8;">Total Amount</td>
+        <td>{{Invheader.0.totalamount}}</td>
+    </tr>
+
+</table>
+
+
+<table border="3" style="
+            width: 100%; margin-top: -2.2%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+    <thead>
+    <tr>
+
+        <th colspan="6" style=" background-color:#D8D8D8;  padding-bottom: 3%;
+                    text-align: center">
+            INVOICE DETAILS
+        </th>
+    </tr>
+
+
+    </thead>
+
+    <tr style=" background-color:#D8D8D8;">
+        <td>Invoice Item</td>
+        <td>Invoice Description</td>
+        <td>Vendor Name</td>
+        <td>Invoice Date</td>
+        <td>Invoice No</td>
+        <td>Invoice Amount</td>
+    </tr>
+
+
+    {% for invdtl in Invheader.0.invoicedtl %}
+    <tr>
+        <td>{{invdtl.productname}}</td>
+        <td> {{invdtl.description}}</td>
+        <td>{{Invheader.0.supplier_id.name}}</td>
+        <td>{{Invheader.0.invoicedate}}</td>
+        <td>{{Invheader.0.invoiceno}}</td>
+        <td>{{invdtl.totalamount}}</td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <td colspan="5">INVOICE TOTAL</td>
+        <td>{{Invheader.0.totalamount}}</td>
+
+    </tr>
+
+</table>
+
+
+<table border="3" style="
+            width: 100%; margin-top: -2.2%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+    <thead>
+    <tr>
+        <th colspan="5" style=" background-color:#D8D8D8;  padding-bottom: 3%;
+                    text-align: center">
+            EXPENSE / ASSET DETAILS
+        </th>
+    </tr>
+    </thead>
+
+    <tr style=" background-color:#D8D8D8;">
+        <td>GL Description</td>
+        <td>GL NO</td>
+        <td>Business Segment</td>
+        <td>Cost Center</td>
+        <td>Debit Amount</td>
+    </tr>
+    {% for dbt in Invheader.0.debit %}
+
+    <tr>
+        <td>{{dbt.subcategory_code.name}}</td>
+        <td>{{dbt.ccbs.glno}}</td>
+        <td>{{dbt.ccbs.bs_code.name}}</td>
+        <td>{{dbt.ccbs.cc_code.name}}</td>
+        <td> {{dbt.amount}}</td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <td colspan="4">DEBIT TOTAL</td>
+        <td>{{Invheader.0.totalamount}}</td>
+
+    </tr>
+
+</table>
+
+
+<table
+        border="3" style="
+            width: 100%; margin-top: -2.2%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+    <thead>
+    <tr>
+        <th colspan="7" style=" background-color:#D8D8D8;  padding-bottom: 3%;
+                    text-align: center">
+            PAYMENT DETAILS
+        </th>
+    </tr>
+    </thead>
+
+    <tr style=" background-color:#D8D8D8;">
+        <td>Beneficiary Name</td>
+        <td>Pay Mode</td>
+        <td>Bank A/C No / Payment Ref No</td>
+        <td>Bank Name</td>
+        <td>Branch Name</td>
+        <td>IFSC Code</td>
+        <td>Credit Amount</td>
+    </tr>
+    {% for crdt in Invheader.0.credit %}
+    <!--font-weight: bold; font-size: 8.5px; -->
+    {% if 4 != crdt.paymode_id.id %}
+    <tr>
+        <td>{{crdt.credit_bank.data.0.beneficiary}}</td>
+        <td>{{crdt.paymode_id.name}}</td>
+        <td style=" word-wrap: break-word  ">{{crdt.credit_bank.data.0.account_no}}</td>
+        <td>{{crdt.credit_bank.data.0.bank_id.name}}</td>
+        <td>{{crdt.credit_bank.data.0.branch_id.name}}</td>
+        <td style="  word-wrap: break-word ">{{crdt.credit_bank.data.0.branch_id.ifsccode}}</td>
+        <td> {{crdt.amount}}</td>
+    </tr>
+    {% elif 4 == crdt.paymode_id.id %}
+    <tr>
+        <td>{{crdt.creditrefno.beneficiary_name}}</td>
+        <td >{{crdt.paymode_id.name}}</td>
+        <td style=" word-wrap: break-word  ">{{crdt.creditrefno.account_number}}</td>
+        <td>{{crdt.creditrefno.bank_name}}</td>
+        <td>{{crdt.creditrefno.bankbranch.name}}</td>
+        <td style="  word-wrap: break-word ">{{crdt.creditrefno.bankbranch.ifsccode}}</td>
+        <td> {{crdt.amount}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+    <tr>
+        <td colspan="6">CREDIT TOTAL</td>
+        <td>{{Invheader.0.totalamount}}</td>
+
+
+</table>
+
+
+<table
+        border="3" style="
+            width: 100%; margin-top: -2.2%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+
+
+    <tr style=" background-color:#D8D8D8;">
+        <td>Amount In Words</td>
+        <td>ECF Remarks</td>
+
+    </tr>
+
+
+    <tr>
+        <td style="text-transform:capitalize"> {{totalamount_in_words}} only</td>
+        <td>{{remark}}</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style=" background-color:#D8D8D8;">Declaration</td>
+
+    </tr>
+</table>
+
+
+<table
+        border="3" style="
+            width: 100%; margin-top: 7%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+
+
+    <tr style=" background-color:#D8D8D8;">
+        <td>Raiser Declaration</td>
+        <td>Approver Declaration</td>
+
+    </tr>
+
+
+    <tr>
+        <td>I hereby confirm that the expense is wholly incurred on behalf of the organisation and is
+            not used for any personal purpose.
+        </td>
+        <td>I hereby confirm that the expense is wholly incurred on behalf of the organisation and
+            has been duly verified & approved by me.
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style=" background-color:#D8D8D8;">ECF Authorization Details</td>
+
+    </tr>
+
+</table>
+
+
+<table
+        border="3" style="
+            width: 100%; margin-top: -2.2%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+
+    <thead>
+    <tr style=" background-color:#D8D8D8;  padding-bottom: 3%">
+        <th>Employee Name</th>
+        <th>Action Date</th>
+        <th>Remarks</th>
+        <th>Status</th>
+        <th>Approved By</th>
+    </tr>
+    </thead>
+
+
+    {% for emp in queue_details %}
+    <tr>
+        <td>{{emp.from_user.name}}</td>
+        <td>{{emp.created_date}}</td>
+        <td>{{emp.remarks}}</td>
+        <td>{{emp.status}}</td>
+        <td>{{emp.to_user.name}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+<p style="
+            margin-left: 1%;">* This is an electronically generated form and does not require signature.</p>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+</body>
+</html>

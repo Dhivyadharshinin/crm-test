@@ -1,0 +1,24 @@
+<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/">
+    <ns0:Header />
+    <ns0:Body>
+        <ns1:submitESSJobRequest>
+            <ns1:jobPackageName>/oracle/apps/ess/financials/generalLedger/programs/common</ns1:jobPackageName>
+            <ns1:jobDefinitionName>JournalImportLauncher</ns1:jobDefinitionName>
+            
+            <ns1:paramList>300000001389024</ns1:paramList>
+            
+            <ns1:paramList>Vsolv</ns1:paramList>
+            
+            <ns1:paramList>300000001389007</ns1:paramList>
+            
+            <ns1:paramList>22204202089</ns1:paramList>
+            
+            <ns1:paramList>N</ns1:paramList>
+            
+            <ns1:paramList>N</ns1:paramList>
+            
+            <ns1:paramList>N</ns1:paramList>
+            
+        </ns1:submitESSJobRequest>
+    </ns0:Body>
+</ns0:Envelope>

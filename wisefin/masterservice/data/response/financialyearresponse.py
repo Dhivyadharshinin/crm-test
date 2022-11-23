@@ -1,0 +1,32 @@
+import json
+
+class FinancialResponse:
+    fin_year = None
+    fin_month = None
+    fin_year_from_period = None
+    fin_year_to_period = None
+    status = None
+    id = None
+
+    def get(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)
+
+    def set_id(self, id):
+        self.id = id
+
+    def set_fin_year(self, fin_year):
+        self.fin_year = fin_year
+
+    def set_fin_month(self, fin_month):
+        self.fin_month = fin_month
+
+
+    def set_status(self, status):
+        self.status = status
+
+    def set_fin_year_from_period(self, fin_year_from_period):
+        self.fin_year_from_period = fin_year_from_period
+
+    def set_fin_year_to_period(self, fin_year_to_period):
+        self.fin_year_to_period = fin_year_to_period

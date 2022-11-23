@@ -1,0 +1,186 @@
+<html>
+
+<body>
+
+            <table border="2"  style="
+            width: 100%; margin-top: 3%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+            <thead >
+              <tr>
+
+                <th colspan="2"  style=" width: 50%; height:200px;   padding-bottom: 3%;
+                    text-align: left">
+                    <img align="left" width="100px" src="{{img}}" style="width:150px;height:110px"/>
+                    <br> NAC <br> <br> Expense Management Cell
+                    <br> NO.1 STREET
+                    <br> chennai 600 300
+                </th>
+
+                  <th rowspan="2" style="text-align: center;"> <b> TAX INVOICE / (CASH / CREDIT) </b>
+                        <br> <br> TAMILNADU GST RULES 2021
+                        <br> ORIGINAL
+                  </th>
+
+
+            </thead>
+              <tr style="word-wrap:break-word;  ">
+
+                <td style="text-align: left-top; width:100px;height:150px" >
+                    GSTIN :  {{vsolv_GSTNO}}
+                </td>
+
+
+                <td style="text-align: left-top; ">
+                    ORDER DETAILS
+                </td>
+
+                <td rowspan="3" style="text-align: left-top; width:100px;height:150px">
+                    &nbsp;PURCHASING DEALER NAME & ADDRESS (CONSIGNEE)<br>
+                    &nbsp;&nbsp;{{customer_name}}<br>
+                    &nbsp;&nbsp;{{addr_line1}}<br>
+                    &nbsp;&nbsp;{{city_name}}<br>
+                    &nbsp;&nbsp;{{district_name}},{{state_name}}<br>
+                    &nbsp;&nbsp;PIN CODE : {{pincode_no}}
+                </td>
+
+              </tr>
+
+              <tr style="word-wrap:break-word;">
+
+                <td style="text-align: left;  width:70px;height:80px" >
+                    DATE :  {{assetsale_date}}
+                </td>
+
+                  <td>
+                    DISPATCH THROUGH & LR NO
+                </td>
+
+              </tr>
+
+
+              <tr style="word-wrap:break-word;">
+
+                <td style="text-align: left;  width:70px;height:80px" >
+                    INVOICE NO :  {{invoice_no}}
+                </td>
+
+                  <td>
+                    DOCUMENT THROUGH
+                </td>
+
+              </tr>
+
+            </table>
+
+
+                <table border="2" style="width:100%; margin-top: -3.4%;
+            margin-left: 1%; margin-bottom: 2%; border-collapse:collapse; table-layout:fixed;" fixed-header>
+                <tr class="grid"  style="text-align:left;background-color:#D8D8D8;">
+                    </tr>
+                <tr class="grid"  style=" height: 40px; text-align: -webkit-left; text-align:center;background-color:#D8D8D8;">
+                    <th>S.No</th>
+                    <th>HSN</th>
+                    <th>QTY</th>
+                    <th>RATE</th>
+                    <th>AMT</th>
+                    <th>SGST</th>
+                    <th>(%)</th>
+                    <th>CGST</th>
+                    <th>(%)</th>
+                    <th>IGST</th>
+                    <th>(%)</th>
+                    <th>NET AMT</th>
+                </tr>
+
+                {% for dl in gst_details %}
+                <tr style="height: 50px;">
+                    <td class="ng-binding" align="center"> {{ forloop.counter }}</td>
+                    <td class="ng-binding" align="center">{{dl.hsn_code}}</td>
+                    <td class="ng-binding" align="center">1</td>
+                    <td class="ng-binding" align="center">{{dl.singletotal_amount}}</td>
+                    <td class="ng-binding"  align="center">{{dl.singletotal_amount}}</td>
+                    <td class="ng-binding"  align="center">{{dl.sgst_amt}}</td>
+                    <td class="ng-binding"  align="center">{{dl.sgst}}</td>
+                    <td class="ng-binding"  align="center">{{dl.cgst_amt}}</td>
+                    <td class="ng-binding"  align="center">{{dl.cgst}}</td>
+                    <td class="ng-binding"  align="center">{{dl.igst_amt}}</td>
+                    <td class="ng-binding"  align="center">{{dl.igst}}</td>
+                    <td class="ng-binding"  align="center">{{dl.singletaxtotal_amount}}</td>
+
+
+                </tr>
+                {% endfor %}
+
+                <tr style="height: 350px;"  >
+                    <td colspan="6" align="left" style="padding:2px">
+                        <b> DELIVERY ADDRESS :</b> <br>
+                        <div style="padding-left:100px" >
+                        &nbsp;&nbsp; &nbsp;&nbsp;{{customer_name}}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{addr_line1}}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{city_name}}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{district_name}},{{state_name}}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;PIN CODE : {{pincode_no}}
+                            </div>
+                    </td>
+                    <td style="padding-bottom:100px " colspan="6" class="ng-binding" align="left">
+                        <b  >TOTAL AMOUNT :  {{ taxtotal_amount}}</b>
+                    </td>
+
+
+                </tr>
+
+
+            </table>
+
+                <table border="3"  style=" border-spacing: 4px; width:100%; height:80%; margin-top: -2.2%;
+                    margin-left: 1%; margin-bottom: 2%;  table-layout:fixed;" fixed-header>
+                    <tr class="grid" style="width:50%;"  >
+                        <td style="text-align:center;  padding-bottom:400px;" rowspan="3" ><b>Signure & Seal</b>
+                            of party <br> Acknowledging recipt of goods
+                        </td>
+                        <td style="text-align:center;   " >
+                            <u><b> REGISTERED OFFICE </b></u> <br> <br>
+                                NAC,Chennai <br> CIN: XXXXXXXXXXXXXXXXXXXX
+                        </td>
+                        <td style="text-align:center;  padding-bottom:400px;" rowspan="3" >
+                            <b> FOR NAC </b>
+
+                            <div style = "position:relative;  top:630px; ">
+        Authorised Signatory
+      </div>
+
+                        </td>
+                    </tr>
+
+                    <tr class="grid"  style="text-align:center">
+
+                        <td  ><b><u> Terms & condition </u></b> <br><br>
+                            <div style="text-align:left">
+                            1.Goods once sold cannot be taken back. <br>
+                            2.Payment to be settled in max.15 days. <br>
+                            3.Delayed payment will be charged additionally at 18% p.a. <br>
+                            4.All Disputes Subject to Chennai jurisdiction.
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr class="grid"  style="text-align:center">
+
+                        <td> <b> <u> DECLARATION  </u></b>   <br>
+                            CERTIFIED THAT ALL THE PARTICULARS ARE TRUE & CORRECT.OUR <br>
+                            REGISTRATION UNDER GST RULES <br>
+                            (AS ABOVE) IS VALID
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+
+  #mdl1_present td,
+  th {
+      padding: 10px;
+  }
+  .supp_ddl{
+      text-align:right;
+      padding: 10px;
+  }
+  .subtr {
+        color: black;
+        align-content: center;
+        text-align: left;
+         line-height:12px;
+    }
+
+td.rowData1 {
+  width:150px;
+  font:12pt arial;
+  text-align:justify;
+  }
+td.rowData2 {
+  width:150px;
+
+}
+
+    html{
+
+        margin: 50;
+        border: solid;
+        }
+
+</style>
+<body>
+<div>
+<!--    <div [innerHTML]={{html_data}}></div>-->
+
+
+    <header style="height:100px">
+        <table width="100%">
+            <th width="70%">
+<!--                <b> <span style="font-size:20px">{{pr_hdrbranch}}</span></b></th>-->
+<!--    &nbsp;-->
+
+            <img align="left" width="100px" src="{{img}}" style="width:150px;height:110px"/>
+            <tr style="height: 50px;" >
+                <td class="ng-binding" align="center"><b> NAC</b> </td>
+            </tr>
+
+            <th style="text-align:left" width="30%"></th>
+
+        </table>
+    </header>
+<!--    <hr style="border: 1px solid black;">-->
+<!--    <span style="font-size:20px"><b>Purchase Request Form</b></span>-->
+<!--    <hr style="border: 1px solid black;">-->
+
+
+    <br><br>
+<!--    From: &nbsp;{{pr_from}}-->
+    <br><br>
+<!--    Approver:{% for approver_data in approver%}-->
+
+<!--                {% if forloop.counter == 1 %}-->
+<!--                    {{approver_data.from_user_id}}-->
+<!--                {% else %}-->
+<!--                    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--                    {{approver_data.from_user_id}}-->
+<!--                {% endif %}-->
+<!--            {% endfor %}-->
+
+<!--    Approver: {{pr_app}}-->
+    <br>
+    <br>
+    <hr style="border: 1px solid black;">
+    <span style="text-decoration: underline;margin-left:400px"><b>
+        Note Pad</b></span><br><br>
+    <tr width="100%">
+            <td colspan="10" width="100%" style="font-size:12px;">{% autoescape off %}
+                {{html_data}}
+                {% endautoescape %}
+            </td>
+        </tr>
+    <br><br>
+
+
+<!--        <b><i>Order Indent(s):</i></b>-->
+            <table border="2" style="width:100%;">
+<!--                <tr class="grid"  style="text-align:center;background-color:#D8D8D8;"><th colspan="10" style="text-align:center;">PR Details</th></tr>-->
+                <tr class="grid"  style="text-align: -webkit-center; text-align:center;background-color:#D8D8D8;">
+                    <th>S.No</th>
+                    <th>HSN</th>
+                    <th>QTY</th>
+                    <th>RATE</th>
+                    <th>AMOUNT</th>
+                    <th>SGST</th>
+                    <th>CGST</th>
+                    <th>IGST</th>
+                    <th>NET Amount</th>
+                </tr>
+
+                {% for dl in gst_details %}
+                <tr style="height: 50px;">
+                    <td class="ng-binding" align="center"> {{ forloop.counter }}</td>
+                    <td class="ng-binding" align="center">{{dl.hsn_code}}</td>
+                    <td class="ng-binding" align="center">1</td>
+                    <td class="ng-binding" align="center">{{dl.total_amount}}</td>
+                    <td class="ng-binding"  align="center">{{dl.total_amount}}</td>
+                    <td class="ng-binding"  align="center">{{dl.supplier_name}}</td>
+                    <td class="ng-binding" colspan="1" align="center">{{dl.uom}}</td>
+                    <td align="right">{{dl.qty}}</td>
+                    <td align="right">{{dl.rate}}</td>
+                    <td align="right">{{dl.value}}</td>
+                </tr>
+                {% endfor %}
+
+                <tr style="background-color:#D8D8D8;height: 30px;"  >
+                    <td colspan="8" align="right" style="padding:6px">
+                        <b> Total Order Value</b>
+                    </td>
+                    <td class="ng-binding" align="right">
+                        <b>{{total}}</b>
+                    </td>
+                    <td></td>
+
+
+                </tr>
+            </table><br><br>
+
+    <hr>
+<!--<footer>-->
+<!--    <p>CENTRAL OFFICE - IT</p>-->
+<!--</footer>-->
+</div>
+</body>
+</html>

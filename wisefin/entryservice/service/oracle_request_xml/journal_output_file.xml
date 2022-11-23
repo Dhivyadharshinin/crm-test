@@ -1,0 +1,171 @@
+<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xmlns.oracle.com/apps/financials/generalLedger/journals/desktopEntry/journalImportService/types/" xmlns:ns2="http://xmlns.oracle.com/apps/financials/generalLedger/journals/desktopEntry/journalImportService/" xmlns:ns3="http://xmlns.oracle.com/apps/flex/financials/generalLedger/journals/desktopEntry/journalLineGdf/">
+    <ns0:Header />
+    <ns0:Body>
+        <ns1:importJournals>
+            <ns1:interfaceRows>
+                <ns2:BatchName>TCF202203270589</ns2:BatchName>
+                <ns2:BatchDescription>TCF202203270589</ns2:BatchDescription>
+                <ns2:LedgerId>300000001389007</ns2:LedgerId>
+                <ns2:AccountingPeriodName>Mar-22</ns2:AccountingPeriodName>
+                <ns2:AccountingDate>2022-03-31</ns2:AccountingDate>
+                <ns2:UserSourceName>Vsolv</ns2:UserSourceName>
+                <ns2:UserCategoryName>Vsolv</ns2:UserCategoryName>
+                <ns2:ErrorToSuspenseFlag>True</ns2:ErrorToSuspenseFlag>
+                <ns2:SummaryFlag>True</ns2:SummaryFlag>
+                <ns2:ImportDescriptiveFlexField>N</ns2:ImportDescriptiveFlexField>
+                <ns2:GlInterface>
+                    <ns2:Reference4>TCF202203270589</ns2:Reference4>
+                    <ns2:Reference5>TCF202203270589</ns2:Reference5>
+                    <ns2:LedgerId>300000001389007</ns2:LedgerId>
+                    <ns2:PeriodName>Mar-22</ns2:PeriodName>
+                    <ns2:AccountingDate>2022-03-31</ns2:AccountingDate>
+                    <ns2:UserJeSourceName>Vsolv</ns2:UserJeSourceName>
+                    <ns2:UserJeCategoryName>Vsolv</ns2:UserJeCategoryName>
+                    <ns2:GroupId>2303202289</ns2:GroupId>
+                    <ns2:ChartOfAccountsId />
+                    <ns2:BalanceType>A</ns2:BalanceType>
+                    <ns2:CodeCombinationId />
+                    <ns2:Segment1>11</ns2:Segment1>
+                    <ns2:Segment2>232601</ns2:Segment2>
+                    <ns2:Segment3>999</ns2:Segment3>
+                    <ns2:Segment4>9999</ns2:Segment4>
+                    <ns2:Segment5>14</ns2:Segment5>
+                    <ns2:Segment6>999</ns2:Segment6>
+                    <ns2:Segment7>99</ns2:Segment7>
+                    <ns2:Segment8>99999</ns2:Segment8>
+                    <ns2:Segment9>99999</ns2:Segment9>
+                    <ns2:Segment10>9999</ns2:Segment10>
+                    <ns2:Segment11 />
+                    <ns2:Segment12 />
+                    <ns2:Segment13 />
+                    <ns2:Segment14 />
+                    <ns2:Segment15 />
+                    <ns2:Segment16 />
+                    <ns2:Segment17 />
+                    <ns2:Segment18 />
+                    <ns2:Segment19 />
+                    <ns2:Segment20 />
+                    <ns2:Segment21 />
+                    <ns2:Segment22 />
+                    <ns2:Segment23 />
+                    <ns2:Segment24 />
+                    <ns2:Segment25 />
+                    <ns2:Segment26 />
+                    <ns2:Segment27 />
+                    <ns2:Segment28 />
+                    <ns2:Segment29 />
+                    <ns2:Segment30 />
+                    <ns2:CurrencyCode>INR</ns2:CurrencyCode>
+                    <ns2:EnteredCrAmount currencyCode="INR" />
+                    <ns2:EnteredDrAmount currencyCode="INR">450.0</ns2:EnteredDrAmount>
+                    <ns2:AccountedCr />
+                    <ns2:AccountedDr />
+                    <ns2:StatisticalValue />
+                    <ns2:UserCurrencyConversionType />
+                    <ns2:CurrencyConversionDate />
+                    <ns2:CurrencyConversionRate />
+                    <ns2:CurrencyConversionType />
+                    <ns2:Reference1 />
+                    <ns2:Reference2 />
+                    <ns2:Reference3 />
+                    <ns2:Reference6 />
+                    <ns2:Reference7 />
+                    <ns2:Reference8 />
+                    <ns2:Reference9 />
+                    <ns2:Reference10 />
+                    <ns2:Reference11 />
+                    <ns2:Reference12 />
+                    <ns2:Reference13 />
+                    <ns2:Reference14 />
+                    <ns2:Reference15 />
+                    <ns2:Reference16 />
+                    <ns2:Reference17 />
+                    <ns2:Reference18 />
+                    <ns2:Reference19 />
+                    <ns2:Reference20 />
+                    <ns2:Reference21 />
+                    <ns2:Reference22 />
+                    <ns2:Reference23 />
+                    <ns2:Reference24 />
+                    <ns2:Reference25 />
+                    <ns2:Reference26 />
+                    <ns2:Reference27 />
+                    <ns2:Reference28 />
+                    <ns2:Reference29 />
+                    <ns2:Reference30 />
+                    <ns2:ReferenceDate />
+                    <ns2:Attribute1 />
+                    <ns2:Attribute2 />
+                    <ns2:Attribute3 />
+                    <ns2:Attribute4 />
+                    <ns2:Attribute5 />
+                    <ns2:Attribute6 />
+                    <ns2:Attribute7 />
+                    <ns2:Attribute8 />
+                    <ns2:Attribute9 />
+                    <ns2:Attribute10 />
+                    <ns2:Attribute11 />
+                    <ns2:Attribute12 />
+                    <ns2:Attribute13 />
+                    <ns2:Attribute14 />
+                    <ns2:Attribute15 />
+                    <ns2:Attribute16 />
+                    <ns2:Attribute17 />
+                    <ns2:Attribute18 />
+                    <ns2:Attribute19 />
+                    <ns2:Attribute20 />
+                    <ns2:AttributeCategory />
+                    <ns2:AttributeCategory2 />
+                    <ns2:AttributeCategory3 />
+                    <ns2:AverageJournalFlag />
+                    <ns2:BalancingSegmentValue />
+                    <ns2:DescrFlexErrorMessage />
+                    <ns2:GlSlLinkId />
+                    <ns2:GlSlLinkTable />
+                    <ns2:InvoiceDate />
+                    <ns2:InvoiceIdentifier />
+                    <ns2:JeCategoryName />
+                    <ns2:JeSourceName />
+                    <ns2:JgzzReconReference />
+                    <ns2:ManagementSegmentValue />
+                    <ns2:ObjectVersionNumber>1</ns2:ObjectVersionNumber>
+                    <ns2:OriginatingBalSegValue />
+                    <ns2:SetOfBooksId />
+                    <ns2:Status>NEW</ns2:Status>
+                    <ns2:TaxCode />
+                    <ns2:TransactionDate />
+                    <ns2:USSGLTransactionCode />
+                    <ns2:GlInterfaceId />
+                    <ns2:LegalEntityIdentifier />
+                    <ns2:LedgerName />
+                    <ns2:AttributeDate1 />
+                    <ns2:AttributeDate10 />
+                    <ns2:AttributeDate2 />
+                    <ns2:AttributeDate3 />
+                    <ns2:AttributeDate4 />
+                    <ns2:AttributeDate5 />
+                    <ns2:AttributeDate6 />
+                    <ns2:AttributeDate7 />
+                    <ns2:AttributeDate8 />
+                    <ns2:AttributeDate9 />
+                    <ns2:AttributeNumber1 />
+                    <ns2:AttributeNumber10 />
+                    <ns2:AttributeNumber2 />
+                    <ns2:AttributeNumber3 />
+                    <ns2:AttributeNumber4 />
+                    <ns2:AttributeNumber5 />
+                    <ns2:AttributeNumber6 />
+                    <ns2:AttributeNumber7 />
+                    <ns2:AttributeNumber8 />
+                    <ns2:AttributeNumber9 />
+                    <ns2:JournalLineGdf><ns3:GlInterfaceId />
+                        <ns3:FLEX_PARAM_GLOBAL_COUNTRY_CODE />
+                        <ns3:__FLEX_Context />
+                        <ns3:__FLEX_Context_DisplayValue />
+                        <ns3:_FLEX_NumOfSegments />
+                    </ns2:JournalLineGdf>
+                </ns2:GlInterface>
+            </ns1:interfaceRows>
+        </ns1:importJournals>
+    </ns0:Body>
+</ns0:Envelope>
